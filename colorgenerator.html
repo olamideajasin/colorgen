@@ -1,0 +1,106 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Random Hex Code Generator</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Staatliches" rel="stylesheet">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background: #6699cc;
+            }
+            .color{
+                margin-top: 275px;
+                text-align: center;
+            }
+            #hex{
+                display: block;
+                color: white;
+                font-size: 100px;
+                opacity: 0.35;
+                font-family: 'Staatliches', cursive;
+            }
+            #factDisplay{
+                display: block;
+                color: white;
+                font-size: 25px;
+                opacity: 0.35;
+                text-align: center;
+                font-family: 'Lato', sans-serif;
+                padding: 10px 300px;
+            }
+            .color button{
+                background: none;
+                outline: none;
+                color: white;
+                border: 4px solid white;
+                cursor: pointer;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="cursor:pointer" onclick= getNewColor();getNewFact();>
+            <span class="color" id= "hex">#6699cc</span>
+            <span id = "factDisplay">It is believed that blonde beards tend to grow much faster than dark beards.</span>
+        </div>
+        <script>
+            function getNewColor(){
+                var symbols,color;
+                symbols = "0123456789ABCDEF";
+
+                color = "#";
+
+                for (var i=0;i<6;i++){
+                    color = color + symbols[Math.floor(Math.random() * 16)];
+                    
+                }
+                document.body.style.background = color;
+                document.getElementById("hex").innerHTML = color;
+                console.log (Math.random());
+            }   
+            
+            function getNewFact(){
+                var facts;
+                var facts = [
+                    "According to various international studies, the world\’s most popular color is blue. Based on the survey conducted by several global marketing firms, they\’ve concluded that people worldwide picked blue (40%) as their favorite color followed by purple (14%). Though some researchers also suggest that red and green are a close second and third respectively. White, orange, and yellow are some of the least favorite colors."
+                    ,"Recent studies have shown that infants as young as 2 weeks of age can already distinguish the color red. Probably because red has the longest wavelength among colors making it the easiest color to process by the developing receptors and nerves in the baby\’s eyes."
+                    ,"She sees crimson, burgundy, and tomato red while he sees red. Reuters reports that researchers from Arizona State University in Tempe have determined there is a gene that allows us to see the color red, and that gene comes in a high number of variations."
+                    ,"Because the gene sits on the X chromosome—and women have two X chromosomes and so two copies of this gene, compared with only one for men—the gene aids women\’s ability to perceive the red-orange color spectrum. Also, in general, women are better at differentiating between close range of colors while men are better at recognizing fine details in a moving object."
+                    ,"Pink is the palliative color. Apparently, it suppresses anger and anxiety due to its calming effect. That is why prisons and mental health care institutions paint their walls pink to control the behavior of those out-of-control prisoners and patients."
+                    ,"The safest car color was determined to be white.  Based on studies, it is the most visible color under all conditions except snow. Though surprisingly, lime-yellow is the most visible color on the road. But being an unpopular choice for a car color, white is a more practical choice. Silver is a close second and could have been a top choice for its invisibility during heavy rains and fogs."
+                    ,"No wonder fast food giants like McDonald\’s, KFC, Burger King, and many other restaurants wear this color scheme. Researchers says that red and yellow are the most appetizing colors. Having said that, they advice not to paint your kitchen yellow if you’re on a diet.  You\’ll just end up frustrating yourself after giving in to the temptation. On the other hand, the color blue is the least appetizing color."
+                    ,"Chromophobia, also known as chromatophobia is a persistent, irrational fear of colors. A severe form of this phobia can hinder daily activities and can make life self-limiting. People with chromophobia may correlate a distressing past event with a color."
+                    ,"Early use of blue paint was so highly prized that laws existed as to what artists were allowed to paint blue. Jesus and Mary\’s robes were usually the only accepted uses of the precious color."
+                    ,"We perceive warm colors as being closer to us while cool colors as farther. Same also with lighter colors being near and darker colors being farther."
+                    ,"Red light is soothing for chickens. It helps them to calm down, sleep better, and avoid cannibalism and pecking problems."
+                    ,"Recent discovery shows that colors affect the way we taste foods. For instance, an orange or creme-colored cup definitely makes chocolate taste better than in any other cup with a different color."
+                    ,"Just like the eternal question between the egg and the chicken, the orange shares the same mystery. But according to studies, the word \“orange\” appears in the English language as early as the 13th century referring to the fruit. The color orange was initially called Geoluhread which means yellow-red. On a related note, it is widely accepted that there is no single English word is a true rhyme for orange."
+                    ,"Turns out that the color red is hypothesized to impair performance on achievement tasks because it\’s associated with failure in achievement contexts and evokes avoidance motivation."
+                    ,"When planning to go on a camping adventure, better leave your dark-colored shirts at home unless you\’re a mosquito lover. Research shows that mosquitoes are attracted to dark colors especially blue. So instead, wear light colored shirts and  loose fitting long sleeves."
+                    ,"When you suddenly switch off the lights on your room—just before complete darkness takes over—you\’ll see a dark gray color which experts called eigengru. According to Wiki, it’s a term for the uniform dark gray background that many people report seeing in the absence of light. "
+                    ,"In Roman mythology, Mars is the god of war so some associate its color to blood. But on a more scientific note, the planet Mars appears to be reddish/rusty in color because it is covered in iron-oxide — the same element that gives blood and rust their color."
+                    ,"It appears that the bad blood between bulls and the color red is a total myth. It is not the color of the muleta that makes the bull go charging but the movement of it. In fact, bulls don’t seem to have any color preference at all. Any moving object—regardless of its color—is a likely target for them."
+                    ,"The color yellow can cause nausea, so it is avoided in airplanes. Also, pure bright yellow is believed to be the most irritating color due to its excessive stimulation to the eye. Huh! Knew it, yellow!"
+                    ,"It is believed that blonde beards tend to grow much faster than dark beards."
+                    ,"If you\’re having a hard time recalling a scene from an old black and white movie or notes that were written using black pen and white papers, maybe the color (or the lack of it ) has something to do with it. Psychologists have found that people are likely to recall a colored version of an image compare to a black and white version of it. They believe this is because color has a stronger appeal to the senses, resulting into better connection in parts that have to do with memory."
+                ];
+                var randomNumber = Math.floor(Math.random()*(facts.length));
+                document.getElementById("factDisplay").innerHTML = facts[randomNumber];
+                console.log (Math.random());
+            }    
+        </script>
+    </body>
+</html>
+
+<script>
+    var redfacts =[an array of facts about red]
+    var bluefacts = []
+    var greenfacts = []
+    var purplefacts = []
+
+# logic for connecting the types of facts to the color (fact about the color)
+to do: database of facts about many many colors. arrays with facts about differenct colors
